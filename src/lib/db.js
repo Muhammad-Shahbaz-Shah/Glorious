@@ -1,4 +1,13 @@
 import mongoose from "mongoose";
+import dns from "dns";
+
+// Add DNS workaround for MongoDB Atlas on some networks (especially Windows)
+// This helps resolve the SRV record if the default DNS fails
+try {
+  dns.setServers(["8.8.8.8", "8.8.4.4"]);
+} catch (e) {
+  console.warn("Could not set custom DNS servers for MongoDB connection");
+}
 
 const MONGODB_URI = process.env.MONGODB_URI?.trim();
 
