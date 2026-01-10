@@ -52,7 +52,7 @@ export default function ProfileDropdown({
 
     ];
 
-    if (data.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
+    if (data.email === process.env.ADMIN_EMAIL) {
         menuItems.unshift({
             label: "Dashboard",
             href: "/-admin/dashboard",

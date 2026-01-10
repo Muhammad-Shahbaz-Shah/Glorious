@@ -36,8 +36,8 @@ const page = () => {
           <p className="text-center  text-muted-foreground/70">
             Our team of experts collaborates closely to turn complex challenges
             into seamless solutions. By combining our diverse skills, we ensure
-            that every project reflects our commitment to professional excellence
-            and collective success.
+            that every project reflects our commitment to professional
+            excellence and collective success.
           </p>
           <Link href="/contact">
             <Button variant="link">
@@ -125,42 +125,42 @@ const page = () => {
               initials: "SS",
             },
             {
-              name: "Syed Ali Asghar Shah Bukhari",
+              name: "Syed Ali Asghar Shah Bukhari 💎 ",
               role: "Juniour Developer",
               initials: "SA",
             },
             {
-              name: "Shahzain Khan",
+              name: "Shahzain Khan 😎",
               role: "Project Manager",
               initials: "SK",
             },
             {
-              name: "Rana Tasheer",
+              name: "Rana Tasheer ❤",
               role: "Senior Investor",
               initials: "RT",
             },
             {
-              name: "Umair Jutt",
+              name: "Umair Jutt 👑",
               role: "UX Designer",
               initials: "UJ",
             },
             {
-              name: "Sabir Biramani",
+              name: "Sabir Biramani✔",
               role: "Product Specialist",
               initials: "SB",
             },
             {
-              name: "Umar Farooq",
+              name: "Umar Farooq🤩",
               role: "Quality Analyst",
               initials: "UF",
             },
             {
-              name: "Habib Sahir",
+              name: "Habib Sahir🎁",
               role: "Tester",
               initials: "HS",
             },
             {
-              name: "Jaffar Baloch",
+              name: "Jaffar Baloch🎗",
               role: "Project Planner",
               initials: "JB",
             },
@@ -180,7 +180,7 @@ const page = () => {
               <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
                 {member.role}
               </p>
-              
+
               <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
                 <div className="w-1 h-1 rounded-full bg-primary/40" />
               </div>
@@ -205,17 +205,13 @@ const page = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/shop">
-              <Button
-                
-                className="w-full  sm:w-auto text-lg h-12 px-8 font-semibold"
-              >
+              <Button className="w-full  sm:w-auto text-lg h-12 px-8 font-semibold">
                 <BaggageClaim /> Explore Products
               </Button>
             </Link>
             <Link href="/contact">
               <Button
                 variant="secondary"
-                
                 className="w-full sm:w-auto text-lg h-12 px-8 bg-white/10 text-white border-white/20 hover:bg-white/20 backdrop-blur-sm"
               >
                 <Phone /> Contact Support
