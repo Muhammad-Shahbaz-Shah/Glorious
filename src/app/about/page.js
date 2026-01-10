@@ -8,7 +8,7 @@ const page = () => {
   return (
     <div className="w-full flex flex-col p-4 px-6 ">
       <div className="flex items-center justify-center my-5 w-full mb-10 gap-6">
-        <div className="h-[1px] hidden sm:block flex-1 bg-gradient-to-r from-transparent via-border to-border" />
+        <div className="h-px hidden sm:block flex-1 bg-linear-to-r from-transparent via-border to-border" />
         <div className="text-center space-y-2">
           <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
             About Us
@@ -18,7 +18,7 @@ const page = () => {
             providing the best possible experience for our customers.
           </p>
         </div>
-        <div className="h-[1px] hidden sm:block flex-1 bg-gradient-to-l from-transparent via-border to-border" />
+        <div className="h-px hidden sm:block flex-1 bg-linear-to-l from-transparent via-border to-border" />
       </div>
       <div className="w-full flex flex-col  md:flex-row items-center  justify-between gap-3">
         <div className="w-full md:w-1/2 overflow-hidden rounded-2xl h-[400px]">
@@ -104,6 +104,68 @@ const page = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 max-w-5xl mx-auto w-full">
+        <div className="text-center mb-12 space-y-2">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight">
+            Our Core Team
+          </h2>
+          <p className="text-muted-foreground text-sm max-w-xl mx-auto">
+            The dedicated professionals driving innovation at Glorious.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+          {[
+            {
+              name: "Syed Muhammad Shahbaz Shah Bukhari",
+              role: "Lead Developer",
+              initials: "SS",
+            },
+            {
+              name: "Shahzain Khan",
+              role: "Project Manager",
+              initials: "SK",
+            },
+            {
+              name: "Umair Jutt",
+              role: "UX Designer",
+              initials: "UJ",
+            },
+            {
+              name: "Sabir Biramani",
+              role: "Product Specialist",
+              initials: "SB",
+            },
+            {
+              name: "Umar Farooq",
+              role: "Quality Analyst",
+              initials: "UF",
+            },
+          ].map((member, index) => (
+            <div
+              key={index}
+              className="group relative p-5 rounded-2xl border border-border bg-card/50 transition-all duration-300 hover:bg-card hover:shadow-lg hover:-translate-y-1 flex flex-col items-center text-center"
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary group-hover:rotate-12 transition-all duration-500">
+                <span className="text-sm font-bold text-primary group-hover:text-primary-foreground">
+                  {member.initials}
+                </span>
+              </div>
+              <h3 className="text-xs md:text-sm font-bold text-foreground mb-1 group-hover:text-primary transition-colors line-clamp-2 min-h-10 flex items-center justify-center">
+                {member.name}
+              </h3>
+              <p className="text-[10px] font-semibold text-muted-foreground uppercase tracking-wider">
+                {member.role}
+              </p>
+              
+              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="w-1 h-1 rounded-full bg-primary/40" />
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

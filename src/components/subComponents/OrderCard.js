@@ -171,12 +171,7 @@ const OrderCard = ({ order }) => {
                 </div>
 
                 <p className="text-[10px] text-right text-primary italic font-medium uppercase tracking-widest">
-                  Payment: {order.paymentInfo.status} •{" "}
-                  {order.paymentInfo.paidAt
-                    ? `Paid ${new Date(
-                        order.paymentInfo.paidAt
-                      ).toLocaleDateString()}`
-                    : "Pending"}
+                  Payment: {order.paymentInfo.status} 
                 </p>
               </section>
             </div>
@@ -194,6 +189,14 @@ const OrderCard = ({ order }) => {
           </p>
 
           <div className="flex items-center gap-2">
+            {order.paymentInfo?.status?.toLowerCase() !== "paid" && (
+              <Link href={`/cart/checkout/payonline?orderId=${order._id}`}>
+                <Button className="bg-blue-600 hover:bg-blue-500 text-white">
+                  Pay Online
+                  <CreditCard className="w-4 h-4 ml-2" />
+                </Button>
+              </Link>
+            )}
             {order.orderStatus !== "Delivered" && (
               <Popover>
                 <PopoverTrigger asChild>
