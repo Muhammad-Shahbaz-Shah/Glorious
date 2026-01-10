@@ -25,6 +25,7 @@ import {
   Package,
   ShoppingBag,
   Tag,
+  Users,
 } from "lucide-react";
 
 import {
@@ -49,6 +50,7 @@ import { useRouter } from "next/navigation";
 /* ---------------- MENU ---------------- */
 const items = [
   { title: "Dashboard", url: "/-admin/dashboard", icon: LayoutDashboard },
+  { title: "Users", url: "/-admin/users", icon: Users },
   { title: "Orders", url: "/-admin/orders", icon: ShoppingBag },
   { title: "Products", url: "/-admin/products", icon: Package },
   { title: "Categories", url: "/-admin/categories", icon: Tag },

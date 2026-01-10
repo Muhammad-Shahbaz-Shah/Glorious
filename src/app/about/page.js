@@ -125,9 +125,19 @@ const page = () => {
               initials: "SS",
             },
             {
+              name: "Syed Ali Asghar Shah Bukhari",
+              role: "Juniour Developer",
+              initials: "SA",
+            },
+            {
               name: "Shahzain Khan",
               role: "Project Manager",
               initials: "SK",
+            },
+            {
+              name: "Rana Tasheer",
+              role: "Senior Investor",
+              initials: "RT",
             },
             {
               name: "Umair Jutt",
@@ -143,6 +153,16 @@ const page = () => {
               name: "Umar Farooq",
               role: "Quality Analyst",
               initials: "UF",
+            },
+            {
+              name: "Habib Sahir",
+              role: "Tester",
+              initials: "HS",
+            },
+            {
+              name: "Jaffar Baloch",
+              role: "Project Planner",
+              initials: "JB",
             },
           ].map((member, index) => (
             <div

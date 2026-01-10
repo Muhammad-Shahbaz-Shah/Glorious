@@ -63,15 +63,15 @@ const OrderCard = ({ order }) => {
         </div>
 
         <CardContent className="p-0">
-          <div className="grid lg:grid-cols-12">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
             {/* Items */}
-            <div className="lg:col-span-7 p-6 space-y-6">
+            <div className="lg:col-span-7 p-4 md:p-6 space-y-6">
               {order.orderItems?.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex gap-4 border-border shadow-md rounded-xl p-2 items-center"
+                  className="flex gap-4 border-border shadow-sm rounded-xl p-3 items-center bg-background/50"
                 >
-                  <div className="h-20 w-20 rounded-lg bg-accent/30 overflow-hidden flex items-center justify-center border border-border">
+                  <div className="h-16 w-16 md:h-20 md:w-20 rounded-lg bg-accent/30 overflow-hidden flex items-center justify-center border border-border shrink-0">
                     <img
                       className="w-full h-full object-cover"
                       src={
@@ -100,19 +100,19 @@ const OrderCard = ({ order }) => {
                     />
                   </div>
 
-                  <div className="flex-1">
-                    <h4 className="font-bold text-foreground">{item.name}</h4>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-bold text-foreground text-sm md:text-base truncate">{item.name}</h4>
 
-                    <p className="text-xs text-muted-foreground mt-1 uppercase">
-                      Product ID: {item.product._id.slice(-6)}
+                    <p className="text-[10px] md:text-xs text-muted-foreground mt-1 uppercase">
+                      ID: {item.product._id.slice(-6)}
                     </p>
 
                     <div className="flex justify-between items-end mt-2">
-                      <p className="text-sm font-medium italic">
+                      <p className="text-xs md:text-sm font-medium italic">
                         Qty: {item.quantity}
                       </p>
 
-                      <p className="text-sm font-bold text-primary">
+                      <p className="text-sm md:text-base font-bold text-primary">
                         ${item.price.toFixed(2)}
                       </p>
                     </div>
@@ -122,7 +122,7 @@ const OrderCard = ({ order }) => {
             </div>
 
             {/* Summary */}
-            <div className="lg:col-span-5 bg-muted/30 p-6 border-l border-border space-y-6 text-sm">
+            <div className="lg:col-span-5 bg-muted/30 p-4 md:p-6 border-t lg:border-t-0 lg:border-l border-border space-y-6 text-sm">
               {/* Shipping */}
               <section>
                 <h5 className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted-foreground mb-3">
@@ -179,8 +179,8 @@ const OrderCard = ({ order }) => {
         </CardContent>
 
         {/* Footer */}
-        <div className="p-4 bg-background border-t border-border flex justify-between items-center">
-          <p className="text-[11px] text-muted-foreground">
+        <div className="p-4 bg-background border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-[11px] text-muted-foreground text-center md:text-left order-2 md:order-1">
             {order.deliveredAt
               ? `Delivered on ${new Date(
                   order.deliveredAt
@@ -188,10 +188,10 @@ const OrderCard = ({ order }) => {
               : "Delivery estimate: 3–5 Business Days"}
           </p>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-2 order-1 md:order-2 w-full md:w-auto">
             {order.paymentInfo?.status?.toLowerCase() !== "paid" && (
-              <Link href={`/cart/checkout/payonline?orderId=${order._id}`}>
-                <Button className="bg-blue-600 hover:bg-blue-500 text-white">
+              <Link href={`/cart/checkout/payonline?orderId=${order._id}`} className="w-full sm:w-auto">
+                <Button className="bg-blue-600 hover:bg-blue-500 text-white w-full sm:w-auto" size="sm">
                   Pay Online
                   <CreditCard className="w-4 h-4 ml-2" />
                 </Button>
@@ -201,15 +201,15 @@ const OrderCard = ({ order }) => {
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
-                    className={"bg-red-600 text-background hover:bg-red-500"}
-                    size=""
+                    className="bg-red-600 text-background hover:bg-red-500 w-full sm:w-auto"
+                    size="sm"
                   >
                     Cancel Order
-                    <Trash2 className="w-4 h-4" />
+                    <Trash2 className="w-4 h-4 ml-2" />
                   </Button>
                 </PopoverTrigger>
-                <PopoverContent className={"flex flex-col gap-1"}>
-                  Are you sure you want to cancel the order
+                <PopoverContent className="flex flex-col gap-2 w-72">
+                  <p className="text-sm">Are you sure you want to cancel the order?</p>
                   <Button
                     onClick={async () => {
                       setIsDeleting(true);
@@ -236,23 +236,23 @@ const OrderCard = ({ order }) => {
                         setIsDeleting(false);
                       }
                     }}
-                    className={"bg-red-600 text-background hover:bg-red-500"}
+                    className="bg-red-600 text-background hover:bg-red-500 w-full"
                     size="sm"
                     disabled={isDeleting}
                   >
                     {isDeleting ? (
                       <Spinner className="w-4 h-4 text-white" />
                     ) : (
-                      "Yes"
+                      "Confirm Cancellation"
                     )}
                   </Button>
                 </PopoverContent>
               </Popover>
             )}
 
-            <Link href={`/orders/${order._id}`}>
-              <Button className="bg-foreground group text-background hover:bg-foreground/90 group">
-                Order Details{" "}
+            <Link href={`/orders/${order._id}`} className="w-full sm:w-auto">
+              <Button className="bg-foreground group text-background hover:bg-foreground/90 w-full sm:w-auto" size="sm">
+                Details{" "}
                 <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
               </Button>
             </Link>
