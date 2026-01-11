@@ -116,7 +116,7 @@ export default function DashboardPage() {
 
   if (
     (!session.user && !isPending) ||
-    session.user.email !== process.env.ADMIN_EMAIL
+    session.user.email !== process.env.NEXT_PUBLIC_ADMIN_EMAIL
   ) {
     redirect("/");
   } else if (!session.user.emailVerified) {

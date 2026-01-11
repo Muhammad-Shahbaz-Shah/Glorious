@@ -156,7 +156,7 @@ export default function UsersPage() {
                       </TableCell>
                       <TableCell className="py-4">
                         <div className="flex items-center gap-2">
-                          {user.email === process.env.ADMIN_EMAIL ? (
+                          {user.email === process.env.NEXT_PUBLIC_ADMIN_EMAIL ? (
                             <div className="flex items-center gap-2 bg-amber-500/10 text-amber-600 border border-amber-500/20 px-3 py-1 rounded-full animate-pulse shadow-sm">
                               <Shield className="w-3.5 h-3.5 fill-amber-500/20" />
                               <span className="text-[10px] font-black uppercase tracking-tighter">System Administrator</span>

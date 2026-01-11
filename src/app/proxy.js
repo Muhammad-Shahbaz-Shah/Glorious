@@ -15,7 +15,7 @@ export default async function adminProxy(req, res, next) {
       });
 
       // Not logged in OR not admin
-      if (!session || session.user.email !== process.env.ADMIN_EMAIL) {
+      if (!session || session.user.email !== process.env.NEXT_PUBLIC_ADMIN_EMAIL) {
         console.warn(
           `[ADMIN BLOCKED] ${session?.user?.email || "Guest"} tried accessing ${
             url.pathname
