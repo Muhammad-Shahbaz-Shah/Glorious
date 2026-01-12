@@ -18,6 +18,8 @@ export const metadata = {
   title: {
     default: "Glorious |  The Future of Modern Ecommerce",
     template: "%s | Glorious",
+  }, verification: {
+    google: 'jZ4aeJNCT2plYEnEoxDpPEC7Qs0esECfkblK677Zbs8',
   },
   description:
     "Shop the latest trends at Glorious. We bring you a seamless, fast, and secure shopping experience with handpicked items that define modern living. Upgrade your lifestyle today.",
